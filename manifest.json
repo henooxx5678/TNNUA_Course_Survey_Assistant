@@ -1,27 +1,32 @@
 {
     "name": "TNNUA_Course_Survey_Assistant",
     "version": "1.0",
-    "description": "An assistant for rapidly complete the course survey of TNNUA.",
-    "permissions": ["storage"],
+    "description": "An assistant for completing the course survey of TNNUA rapidly.",
+    "icons": {
+        "16": "imgs/icon_16.png",
+        "32": "imgs/icon_32.png",
+        "48": "imgs/icon_64.png",
+        "128": "imgs/icon_128.png"
+    },
+    "permissions": [],
     "background": {
-        "scripts": ["bg,js"],
+        "scripts": ["bg.js"],
         "persistent": false
     },
     "page_action": {
-        "default_popup": "popup.html",
         "default_icon": {
-            "16": "",
-            "32": "",
-            "48": "",
-            "128": ""
-        },
+            "16": "imgs/icon_16.png",
+            "32": "imgs/icon_32.png",
+            "48": "imgs/icon_64.png",
+            "128": "imgs/icon_128.png"
+        }
     },
-    "icons": {
-        "16": "",
-        "32": "",
-        "48": "",
-        "128": ""
-    },
+    "content_scripts": [
+        {
+            "matches": ["https://ap.tnnua.edu.tw/StdInfo/*"],
+            "js": ["contentScript.js"]
+        }
+    ],
     "options_page": "options.html",
     "manifest_version": 2
 }
